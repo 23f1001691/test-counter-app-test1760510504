@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter App</title>
+    <meta name="description" content="A clean, responsive, and accessible counter application built with vanilla HTML, CSS, and JavaScript for GitHub Pages.">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Simple Counter App">
+    <meta property="og:description" content="A clean, responsive, and accessible counter application.">
+    <meta property="og:image" content="./sample.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Simple Counter App</h1>
+    </header>
+
+    <main>
+        <section class="counter-card" aria-labelledby="counter-heading">
+            <h2 id="counter-heading">Counter</h2>
+            <p class="counter-display">
+                Current count: 
+                <span id="counter-value" aria-live="polite">0</span>
+            </p>
+            <div class="button-container">
+                <button id="increment-btn" class="btn" aria-label="Increment counter by one">
+                    Increment
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024. A production-grade front-end project.</p>
+    </footer>
+
+</body>
+</html>
