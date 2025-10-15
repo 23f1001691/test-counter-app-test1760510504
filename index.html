@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Counter App</title>
-    <meta name="description" content="A clean, responsive, and accessible counter application built with vanilla HTML, CSS, and JavaScript for GitHub Pages.">
+    <meta name="description" content="A clean, responsive, and accessible counter application with increment, decrement, reset, and history features, built with vanilla HTML, CSS, and JavaScript.">
     
     <!-- Social Media Meta Tags -->
     <meta property="og:title" content="Simple Counter App">
-    <meta property="og:description" content="A clean, responsive, and accessible counter application.">
+    <meta property="og:description" content="A clean, responsive, and accessible counter application with full controls and history.">
     <meta property="og:image" content="./sample.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
@@ -31,9 +31,22 @@
                 <span id="counter-value" aria-live="polite">0</span>
             </p>
             <div class="button-container">
+                <button id="decrement-btn" class="btn" aria-label="Decrement counter by one">
+                    Decrement
+                </button>
                 <button id="increment-btn" class="btn" aria-label="Increment counter by one">
                     Increment
                 </button>
+                <button id="reset-btn" class="btn btn--secondary" aria-label="Reset counter to zero">
+                    Reset
+                </button>
+            </div>
+
+            <div class="history-container" aria-labelledby="history-heading">
+                <h3 id="history-heading">History (Last 5)</h3>
+                <ul id="history-list" class="history-list">
+                    <!-- History items will be populated by JavaScript -->
+                </ul>
             </div>
         </section>
     </main>

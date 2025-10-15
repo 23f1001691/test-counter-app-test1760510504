@@ -8,6 +8,9 @@
     --color-card-bg: #ffffff;
     --color-primary: #007bff;
     --color-primary-hover: #0056b3;
+    --color-secondary-bg: transparent;
+    --color-secondary-text: #495057;
+    --color-secondary-hover-bg: #e9ecef;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --border-color: #dee2e6;
 
@@ -29,6 +32,9 @@
         --color-card-bg: #242526;
         --color-primary: #2d88ff;
         --color-primary-hover: #529fff;
+        --color-secondary-bg: transparent;
+        --color-secondary-text: #adb5bd;
+        --color-secondary-hover-bg: rgba(255, 255, 255, 0.1);
         --shadow-color: rgba(0, 0, 0, 0.3);
         --border-color: #3a3b3c;
     }
@@ -112,7 +118,7 @@ main {
     color: var(--color-primary);
     min-width: 60px; /* Prevents layout shift */
     text-align: center;
-    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+    transition: color var(--transition-speed) ease;
 }
 
 /* Animation for counter update */
@@ -129,19 +135,24 @@ main {
 /* --- Button Component --- */
 .button-container {
     margin-top: var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
 }
 
 .btn {
     background-color: var(--color-primary);
     color: #ffffff;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 8px;
-    padding: var(--spacing-sm) var(--spacing-xl);
+    padding: var(--spacing-sm) var(--spacing-lg);
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     user-select: none;
+    flex-grow: 1;
+    flex-basis: 120px;
 }
 
 .btn:hover {
@@ -158,6 +169,77 @@ main {
 .btn:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
+}
+
+.btn--secondary {
+    background-color: var(--color-secondary-bg);
+    color: var(--color-secondary-text);
+    border-color: var(--border-color);
+    flex-basis: 100%;
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-secondary-hover-bg);
+    border-color: var(--color-primary);
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- History Component --- */
+.history-container {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.history-container h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.history-list li {
+    background-color: var(--color-bg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.history-list .history-placeholder {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6;
+    padding: var(--spacing-md) 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+.history-list li.new-item {
+    animation: fadeInDown 0.4s ease-out forwards;
 }
 
 /* --- Responsive --- */
